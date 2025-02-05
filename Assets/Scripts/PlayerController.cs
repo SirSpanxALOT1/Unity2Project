@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             _moveInput = true;
-            curSpeed.x += (_movementAcceleration * Time.deltaTime);
+            curSpeed.x += (_movementAcceleration * Time.deltaTime * 15);
             _curFacing.x = 1;
             _curFacing.z = 0;
         }
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             _moveInput = true;
-            curSpeed.x -= (_movementAcceleration * Time.deltaTime);
+            curSpeed.x -= (_movementAcceleration * Time.deltaTime * 15);
             _curFacing.x = -1;
             _curFacing.z = 0;
         }
@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             _moveInput = true;
-            curSpeed.z += (_movementAcceleration * Time.deltaTime);
+            curSpeed.z += (_movementAcceleration * Time.deltaTime * 15);
             _curFacing.z = 1;
             _curFacing.x = 0;
         }
@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow))
         {
             _moveInput = true;
-            curSpeed.z -= (_movementAcceleration * Time.deltaTime);
+            curSpeed.z -= (_movementAcceleration * Time.deltaTime * 15);
             _curFacing.z = -1;
             _curFacing.x = 0;
         }
