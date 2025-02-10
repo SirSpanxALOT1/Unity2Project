@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 785953388648861037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.09765778, y: 1, z: 3.6250277}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -111,15 +111,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3617452fb6fb8074ba8ca05d301c0ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementAcceleration: 2
-  _movementVelocityMax: 15
-  _movementFriction: 0.02
+  _movementAcceleration: 1.25
+  _movementVelocityMax: 5
+  _movementFriction: 0.05
   _jumpVelocity: 12
   _extraGravity: 15
-  _isGrounded: 0
+  _isGrounded: 1
   _myCollider: {fileID: 785953388648861039}
   _weaponEquipped: {fileID: 0}
-  _bulletToSpawn: {fileID: 0}
+  _bulletToSpawn: {fileID: 7291414137076520244, guid: aad0500e6718e6e4a975ca780b008d19, type: 3}
 --- !u!54 &785953388648861035
 Rigidbody:
   m_ObjectHideFlags: 0
