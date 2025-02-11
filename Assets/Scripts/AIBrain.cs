@@ -6,6 +6,8 @@ using UnityEngine.AI;
 
 public class AIBrain : MonoBehaviour
 {
+    public Animator animator;
+
     #region ** members **
     // the current set of AI actions
     UnityEvent _curAIDirective;
@@ -38,6 +40,8 @@ public class AIBrain : MonoBehaviour
 
         // set default actions
         _curAIDirective = _defaultActions;
+
+        animator = gameObject.GetComponent<Animator>();
     }
     void Update()
     {
@@ -85,6 +89,8 @@ public class AIBrain : MonoBehaviour
     {
         if (CalcDistanceToPlayer() < distance)
             _alertedActions?.Invoke();
+
+        animator.Play("EnemyIdle");
     }
 
     public void PauseAI( float timeInMS )
@@ -135,6 +141,9 @@ public class AIBrain : MonoBehaviour
 
         // look ahead towards the player
         transform.LookAt(playerPos);
+
+        animator.SetBool("seesPlayer", true);
+        //animator.Play("EnemyAngry");
     }
 
     #endregion
