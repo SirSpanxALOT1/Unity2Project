@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -43,6 +44,10 @@ public class PlayerController : MonoBehaviour
     bool _moveInput = false;
 
     Animator _myAnimator;
+
+    public int BouncePoints;
+
+    public Text BounceCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -131,15 +136,15 @@ public class PlayerController : MonoBehaviour
                 _weaponEquipped.onAttack(_curFacing);
 
                 // assign animation
-                if ( _weaponEquipped._attackAnim != "" )
-                    _myAnimator.Play( _weaponEquipped._attackAnim);
+                //if ( _weaponEquipped._attackAnim != "" )
+                    //_myAnimator.Play( _weaponEquipped._attackAnim);
             }
         }
 
         // set rotation based on facing
         transform.LookAt(transform.position - new Vector3(_curFacing.x, 0f, _curFacing.z));
 
-        UpdateAnimation();
+        //UpdateAnimation();
         
         // apply the max speed
         curSpeed.x = Mathf.Clamp(curSpeed.x, _movementVelocityMax * -1, _movementVelocityMax);
@@ -169,11 +174,11 @@ public class PlayerController : MonoBehaviour
 
         if (_moveInput)
         {
-            _myAnimator.Play("Run");
+            //_myAnimator.Play("Run");
         }
         else
         {
-            _myAnimator.Play("Idle");
+            //_myAnimator.Play("Idle");
         }
 
      }
@@ -185,7 +190,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     bool CalcIsGrounded()
     {
-        float offset = 0.5f;
+        float offset = 0.1f;
 
         Vector3 pos = _myCollider.bounds.center;
         pos.y = _myCollider.bounds.min.y - offset;
@@ -195,7 +200,11 @@ public class PlayerController : MonoBehaviour
         return _isGrounded;
     }
 
-
+    public void BouncePointCounter(int value)
+    {
+        BouncePoints = BouncePoints + value;
+        BounceCounter.text = BouncePoints.ToString();
+    }
     // NEW CODE
     #region *** Weapons ***
 
