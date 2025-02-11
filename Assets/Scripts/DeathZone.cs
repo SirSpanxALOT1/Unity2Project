@@ -17,6 +17,10 @@ public class DeathZone : MonoBehaviour
         {
             DeathScreen.SetActive(false);
         }
+        else
+        {
+            Destroy(collision.gameObject);
+        }
 
     }
 }
