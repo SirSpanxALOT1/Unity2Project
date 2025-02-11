@@ -44,7 +44,7 @@ public class HealthModifier : MonoBehaviour
 
         // get the HealthManager of the object we've hit
         HealthManager healthManager = hitObj.GetComponent<HealthManager>();
-        if (healthManager && IsValidTarget(hitObj))
+        if (healthManager)
         {
             // apply the damage as negative health to this object
             healthManager.AdjustCurHealth(_healthChange);

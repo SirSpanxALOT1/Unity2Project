@@ -11,6 +11,6 @@ public class TitleMenu : MonoBehaviour
     /// </summary>
     public void onPressStartGameBtn()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1");
     }
 }

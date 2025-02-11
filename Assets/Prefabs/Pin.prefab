@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9049013487134381277}
   - component: {fileID: 9049013487134381276}
   - component: {fileID: 7916865509552723318}
+  - component: {fileID: 4728789702704636125}
   m_Layer: 0
   m_Name: Pin
   m_TagString: Untagged
@@ -249,3 +250,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hits: 0
   Player: {fileID: 0}
+--- !u!114 &4728789702704636125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8166684201921292678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c761e26ddd3aa6142aa501711b1faf33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthMax: 10
+  _healthCur: 10
+  _invincibilityFramesMax: 0
+  _invincibilityFramesCur: 0
+  _isDead: 0

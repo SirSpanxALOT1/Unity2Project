@@ -85,8 +85,8 @@ public class HealthManager : MonoBehaviour
     public float AdjustCurHealth(float change)
     {
         // leave early if we've just been hit and we're trying to apply damage
-        if (_invincibilityFramesCur > 0)
-            return _healthCur;
+        //if (_invincibilityFramesCur > 0)
+            //return _healthCur;
 
         // adjust the health
         _healthCur += change;
@@ -105,8 +105,8 @@ public class HealthManager : MonoBehaviour
         }
 
         // should we be invincible after a hit?
-        if (change < 0 && _invincibilityFramesMax > 0)
-            _invincibilityFramesCur = _invincibilityFramesMax;
+        //if (change < 0 && _invincibilityFramesMax > 0)
+            //_invincibilityFramesCur = _invincibilityFramesMax;
 
         return _healthCur;
     }
