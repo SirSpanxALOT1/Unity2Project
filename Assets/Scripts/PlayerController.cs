@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
             curSpeed.y -= _extraGravity * Time.deltaTime;
 
         // fire the weapon?
-        if ( Input.GetKeyDown(KeyCode.Return) )
+        if (Input.GetButtonDown("Fire1"))
         {
             if (_weaponEquipped)
             {
@@ -190,14 +190,31 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     bool CalcIsGrounded()
     {
-        float offset = 0.1f;
+        //float offset = 0.1f;
 
-        Vector3 pos = _myCollider.bounds.center;
-        pos.y = _myCollider.bounds.min.y - offset;
+        //Vector3 pos = _myCollider.bounds.center;
+        //pos.y = _myCollider.bounds.min.y - offset;
 
-        _isGrounded = Physics.CheckSphere(pos, offset);
+        //_isGrounded = Physics.CheckSphere(pos, offset);
 
-        return _isGrounded;
+        //return _isGrounded;
+
+        RaycastHit rayHit;
+
+        if(Physics.Raycast(transform.position, -Vector3.up, out rayHit, 1.5f))
+        {
+            if(rayHit.collider.gameObject.tag != "Ground")
+            {
+                return false;
+                Debug.Log("didn't hit Ground");
+            }
+            else
+            {
+                return true ;
+                Debug.Log("hit Ground");
+            }
+        }
+        return false;
     }
 
     public void BouncePointCounter(int value)
