@@ -185,7 +185,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     bool CalcIsGrounded()
     {
-        float offset = 0.1f;
+        float offset = 0.5f;
 
         Vector3 pos = _myCollider.bounds.center;
         pos.y = _myCollider.bounds.min.y - offset;
