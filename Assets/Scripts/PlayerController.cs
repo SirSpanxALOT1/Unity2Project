@@ -206,12 +206,10 @@ public class PlayerController : MonoBehaviour
             if(rayHit.collider.gameObject.tag != "Ground")
             {
                 return false;
-                Debug.Log("didn't hit Ground");
             }
             else
             {
                 return true ;
-                Debug.Log("hit Ground");
             }
         }
         return false;
